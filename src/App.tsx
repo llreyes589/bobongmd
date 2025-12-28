@@ -159,17 +159,17 @@ const App = () => {
   );
 
   const Hero = () => (
-    <div className="relative overflow-hidden py-24">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-3">
       {/* decorative blobs */}
       <svg
         className="absolute -left-32 -top-40 opacity-30"
-        width="520"
-        height="520"
-        viewBox="0 0 520 520"
+        width="420"
+        height="420"
+        viewBox="0 0 420 420"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <circle cx="260" cy="260" r="260" fill="url(#g1)" />
+        <circle cx="210" cy="210" r="210" fill="url(#g1)" />
         <defs>
           <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
             <stop offset="1" stopColor="#F0CB46" />
@@ -177,74 +177,63 @@ const App = () => {
         </defs>
       </svg>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-              <span className="bg-clip-text text-transparent bg-linear-to-r from-primary-main via-primary-light to-secondary-main">
-                Advancing Medical Science
-              </span>
-              <div className="text-3xl font-medium text-primary-light mt-2">
-                Pathology • Teaching • Mentorship
-              </div>
-            </h1>
-            <p className="text-lg text-gray-600 max-w-xl">
-              Dr. Bobong is a pathologist and professor based in the Philippines
-              — combining clinical expertise, research, and entrepreneurship to
-              educate future healthcare leaders.
-            </p>
+      <div className="md:grid md:grid-cols-2 md:gap-12 items-center">
+        <div className="space-y-6">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-primary-main via-primary-light to-secondary-main">
+              Advancing Medical Science
+            </span>
+            <div className="xs:text-lg md:text-3xl font-medium text-primary-light mt-2">
+              Pathology • Teaching • Mentorship
+            </div>
+          </h1>
+          <p className="text-lg text-gray-600 max-w-xl">
+            Dr. Bobong is a pathologist and professor based in the Philippines —
+            combining clinical expertise, research, and entrepreneurship to
+            educate future healthcare leaders.
+          </p>
 
-            <div className="flex gap-4 mt-6">
-              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 shadow-md w-40">
-                <div className="text-sm text-gray-500">Years in Practice</div>
-                <div className="text-2xl font-bold text-blue-700">15+</div>
+          <div className="flex md:gap-4 my-6">
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 shadow-md w-40">
+              <div className="xs:text-xs md:text-sm text-gray-500">
+                Years in Practice
               </div>
-              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 shadow-md w-40">
-                <div className="text-sm text-gray-500">Publications</div>
-                <div className="text-2xl font-bold text-teal-700">32</div>
+              <div className="text-2xl font-bold text-blue-700">15+</div>
+            </div>
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 shadow-md w-40">
+              <div className="xs:text-xs md:text-sm text-gray-500">
+                Publications
               </div>
-              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 shadow-md w-40">
-                <div className="text-sm text-gray-500">Students Mentored</div>
-                <div className="text-2xl font-bold text-green-700">120+</div>
+              <div className="text-2xl font-bold text-teal-700">32</div>
+            </div>
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 shadow-md w-40">
+              <div className="xs:text-xs md:text-sm text-gray-500">
+                Students Mentored
               </div>
+              <div className="text-2xl font-bold text-green-700">120+</div>
             </div>
           </div>
-          <div className="relative">
-            <div className="rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
-              <div className="h-64 sm:h-80 md:h-96 bg-gray-100 flex items-center justify-center">
-                <img
-                  src={dp}
-                  alt="Dr. Bobong"
-                  className="w-full h-full object-cover"
-                />
+        </div>
+        <div className="">
+          <div className="rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
+            <div className="h-64 sm:h-80 md:h-96  flex items-center justify-center">
+              <img
+                src={dp}
+                alt="Dr. Bobong"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4 bg-white">
+              <div className="text-gray-700 font-semibold">
+                Dr. Pedrito Y. Tagayuna, MD, FPSP
               </div>
-              <div className="p-4 bg-white">
-                <div className="text-gray-700 font-semibold">
-                  Dr. Pedrito Y. Tagayuna, MD, FPSP
-                </div>
-                <div className="text-sm text-gray-500">
-                  Pathology • Professor • Mentorship
-                </div>
+              <div className="text-sm text-gray-500">
+                Pathology • Professor • Mentorship
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* subtle bottom wave */}
-      <svg
-        className="absolute right-0 -bottom-40 opacity-20"
-        width="700"
-        height="300"
-        viewBox="0 0 700 300"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0 200 C150 300 350 100 700 200 L700 300 L0 300 Z"
-          fill="#dbeafe"
-        />
-      </svg>
     </div>
   );
 

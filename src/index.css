@@ -123,12 +123,25 @@
   --spacing-192: 48rem;
   --spacing-256: 64rem;
   --spacing-320: 80rem;
+
+  /* Breakpoints */
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
 }
 
 /* Container */
 @utility container {
   padding-left: 16px;
   padding-right: 16px;
+
+  @media (width >= theme(--breakpoint-xs)) {
+    padding-left: calc((100vw + 16px - 320px) / 2);
+    padding-right: calc((100vw + 16px - 320px) / 2);
+  }
 
   @media (width >= theme(--breakpoint-sm)) {
     padding-left: calc((100vw + 16px - 640px) / 2);
