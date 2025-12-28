@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Menu,
   X,
@@ -14,28 +14,16 @@ import {
   FileText,
   Calendar,
 } from "lucide-react";
+import dp from "./assets/dp.png";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [portalView, setPortalView] = useState("overview");
-  const [submissions, setSubmissions] = useState([]);
-  const [announcements, setAnnouncements] = useState([
-    {
-      id: 1,
-      title: "Midterm Examination Schedule",
-      date: "2024-01-15",
-      section: "Section A",
-    },
-    {
-      id: 2,
-      title: "New Laboratory Protocols",
-      date: "2024-01-14",
-      section: "All Sections",
-    },
-  ]);
+  const [submissions, setSubmissions] = useState<any>([]);
+  const [announcements, setAnnouncements] = useState<any>([]);
 
-  const handleFileUpload = (e, type) => {
+  const handleFileUpload = (e: any, type: any) => {
     const file = e.target.files[0];
     if (file) {
       const newSubmission = {
@@ -49,6 +37,23 @@ const App = () => {
       alert(`${type} uploaded successfully!`);
     }
   };
+
+  useEffect(() => {
+    setAnnouncements([
+      {
+        id: 1,
+        title: "Midterm Examination Schedule",
+        date: "2024-01-15",
+        section: "Section A",
+      },
+      {
+        id: 2,
+        title: "New Laboratory Protocols",
+        date: "2024-01-14",
+        section: "All Sections",
+      },
+    ]);
+  }, []);
 
   const resources = [
     {
@@ -207,15 +212,19 @@ const App = () => {
           </div>
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
-              <div className="h-96 bg-linear-to-br from-blue-500 to-green-400 flex items-center justify-center">
-                <ImageIcon className="h-32 w-32 text-white/80" />
+              <div className="h-64 sm:h-80 md:h-96 bg-gray-100 flex items-center justify-center">
+                <img
+                  src={dp}
+                  alt="Dr. Bobong"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="p-4 bg-white">
                 <div className="text-gray-700 font-semibold">
-                  Professional Photo
+                  Dr. Pedrito Y. Tagayuna, MD, FPSP
                 </div>
                 <div className="text-sm text-gray-500">
-                  Placeholder image — replace with a portrait
+                  Pathology • Professor • Mentorship
                 </div>
               </div>
             </div>
@@ -394,7 +403,7 @@ const App = () => {
           Announcements
         </h2>
         <div className="space-y-6">
-          {announcements.map((announcement) => (
+          {announcements.map((announcement: any) => (
             <div
               key={announcement.id}
               className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-all duration-300 border-l-4 border-teal-600"
@@ -587,7 +596,7 @@ const App = () => {
               </div>
             ) : (
               <div className="space-y-4">
-                {submissions.map((submission) => (
+                {submissions.map((submission: any) => (
                   <div
                     key={submission.id}
                     className="flex items-center justify-between p-4 bg-gray-50 rounded-lg"
