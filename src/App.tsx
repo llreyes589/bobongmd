@@ -159,7 +159,7 @@ const App = () => {
   );
 
   const Hero = () => (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-3">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:py-16 xs:pt-3">
       {/* decorative blobs */}
       <svg
         className="absolute -left-32 -top-40 opacity-30"
