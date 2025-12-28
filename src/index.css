@@ -2,16 +2,11 @@
 
 @theme {
   /* Colors */
-  --color-brand-50: rgb(240, 249, 255);
-  --color-brand-100: rgb(224, 242, 254);
-  --color-brand-200: rgb(186, 230, 253);
-  --color-brand-300: rgb(125, 211, 252);
-  --color-brand-400: rgb(56, 189, 248);
-  --color-brand-500: rgb(14, 165, 233);
-  --color-brand-600: rgb(2, 132, 199);
-  --color-brand-700: rgb(3, 105, 161);
-  --color-brand-800: rgb(7, 89, 133);
-  --color-brand-900: rgb(12, 74, 110);
+  --color-primary-main: rgb(0 29 61);
+  --color-primary-dark: rgb(0 8 20);
+  --color-primary-light: rgb(0 53 102);
+  --color-secondary-main: rgb(240 203 70);
+  --color-secondary-dark: rgb(204 160 0);
   --color-neutral-0: rgb(255, 255, 255);
   --color-neutral-50: rgb(249, 250, 251);
   --color-neutral-100: rgb(243, 244, 246);
