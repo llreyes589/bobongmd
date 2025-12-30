@@ -1,7 +1,7 @@
 import { Bell, Calendar } from "lucide-react";
 import React from "react";
 
-type AnnouncementProps = {
+export type AnnouncementProps = {
   id: number;
   title: string;
   date: string;
