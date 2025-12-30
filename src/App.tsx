@@ -1,19 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  Menu,
-  X,
-  Download,
-  Upload,
-  Bell,
-  Users,
-  Microscope,
-  Briefcase,
-  Heart,
-  BookOpen,
-  ImageIcon,
-  FileText,
-  Calendar,
-} from "lucide-react";
+import { Upload } from "lucide-react";
 import Header from "./components/layout/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -21,6 +7,7 @@ import Gallery from "./pages/Gallery";
 import Advocacies from "./pages/Advocacies";
 import Announcements, { type AnnouncementProps } from "./pages/Announcements";
 import Portal from "./pages/Portal";
+import Footer from "./components/layout/Footer";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -67,15 +54,7 @@ const App = () => {
         <Announcements announcements={announcements} />
       )}
       {activeSection === "portal" && <Portal announcements={announcements} />}
-
-      <footer className="bg-linear-180 from-primary-light to-primary-main text-white py-8 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="mb-2">© 2026 BobongMD. All rights reserved.</p>
-          <p className="text-secondary-dark">
-            Dedicated to Excellence in Pathology Education & Practice
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
