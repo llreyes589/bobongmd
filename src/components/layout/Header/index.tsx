@@ -37,7 +37,7 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
               <button
                 key={section}
                 onClick={() => setActiveSection(section)}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+                className={`md:px-1 lg:px-3 py-2 rounded-md md:text-caption lg:text-sm font-medium transition-all duration-300 ${
                   activeSection === section
                     ? "bg-white text-primary-dark shadow-md"
                     : "hover:bg-primary-light"
