@@ -2,7 +2,7 @@ import dp from "../../assets/dp.png";
 
 const Home = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:py-16 xs:pt-3">
+    <>
       {/* decorative blobs */}
       <svg
         className="absolute -left-32 -top-40 opacity-30"
@@ -77,7 +77,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

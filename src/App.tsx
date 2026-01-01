@@ -46,15 +46,19 @@ const App = () => {
         <Upload className="h-6 w-6" />
       </button>
 
-      <div className="flex-1">
-        {activeSection === "home" && <Home />}
-        {activeSection === "about" && <About />}
-        {activeSection === "gallery" && <Gallery />}
-        {activeSection === "advocacies" && <Advocacies />}
-        {activeSection === "announcements" && (
-          <Announcements announcements={announcements} />
-        )}
-        {activeSection === "portal" && <Portal announcements={announcements} />}
+      <div className="flex-1 ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          {activeSection === "home" && <Home />}
+          {activeSection === "about" && <About />}
+          {activeSection === "gallery" && <Gallery />}
+          {activeSection === "advocacies" && <Advocacies />}
+          {activeSection === "announcements" && (
+            <Announcements announcements={announcements} />
+          )}
+          {activeSection === "portal" && (
+            <Portal announcements={announcements} />
+          )}
+        </div>
       </div>
 
       <Footer />

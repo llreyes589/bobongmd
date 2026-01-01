@@ -1,7 +1,7 @@
 import { ImageIcon } from "lucide-react";
 
 const Gallery = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <>
     <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
       Gallery
     </h2>
@@ -26,7 +26,7 @@ const Gallery = () => (
         </div>
       ))}
     </div>
-  </div>
+  </>
 );
 
 export default Gallery;

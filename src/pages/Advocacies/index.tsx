@@ -1,7 +1,7 @@
 import { Briefcase, Heart, Microscope } from "lucide-react";
 
 const Advocacies = () => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <>
     <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
       Advocacies & Interests
     </h2>
@@ -55,7 +55,7 @@ const Advocacies = () => (
         </div>
       </div>
     </div>
-  </div>
+  </>
 );
 
 export default Advocacies;
