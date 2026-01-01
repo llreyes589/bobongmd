@@ -1,4 +1,5 @@
 import { Bell, Calendar } from "lucide-react";
+import PageTemplate from "../../components/layout/template/PageTemplate";
 
 export type AnnouncementProps = {
   id: number;
@@ -12,7 +13,7 @@ const Announcements = ({
 }: {
   announcements: AnnouncementProps[];
 }) => (
-  <>
+  <PageTemplate>
     <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
       Announcements
     </h2>
@@ -42,7 +43,7 @@ const Announcements = ({
         </div>
       ))}
     </div>
-  </>
+  </PageTemplate>
 );
 
 export default Announcements;

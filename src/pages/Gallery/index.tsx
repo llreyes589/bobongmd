@@ -1,7 +1,8 @@
 import { ImageIcon } from "lucide-react";
+import PageTemplate from "../../components/layout/template/PageTemplate";
 
 const Gallery = () => (
-  <>
+  <PageTemplate>
     <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
       Gallery
     </h2>
@@ -26,7 +27,7 @@ const Gallery = () => (
         </div>
       ))}
     </div>
-  </>
+  </PageTemplate>
 );
 
 export default Gallery;

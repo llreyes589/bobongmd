@@ -1,7 +1,8 @@
 import { BookOpen, Microscope, Users } from "lucide-react";
+import PageTemplate from "../../components/layout/template/PageTemplate";
 
 const About = () => (
-  <>
+  <PageTemplate>
     <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
       Brief Information
     </h2>
@@ -55,7 +56,7 @@ const About = () => (
         </div>
       </div>
     </div>
-  </>
+  </PageTemplate>
 );
 
 export default About;

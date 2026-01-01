@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import type { AnnouncementProps } from "../Announcements";
+import PageTemplate from "../../components/layout/template/PageTemplate";
 
 type PortalViewProps = {
   id: string;
@@ -71,7 +72,7 @@ const Portal = ({ announcements }: { announcements: AnnouncementProps[] }) => {
     }
   };
   return (
-    <>
+    <PageTemplate>
       <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
         Student Portal
       </h2>
@@ -237,7 +238,7 @@ const Portal = ({ announcements }: { announcements: AnnouncementProps[] }) => {
           )}
         </div>
       )}
-    </>
+    </PageTemplate>
   );
 };
 

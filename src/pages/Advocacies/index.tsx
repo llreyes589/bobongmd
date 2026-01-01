@@ -1,7 +1,8 @@
 import { Briefcase, Heart, Microscope } from "lucide-react";
+import PageTemplate from "../../components/layout/template/PageTemplate";
 
 const Advocacies = () => (
-  <>
+  <PageTemplate>
     <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
       Advocacies & Interests
     </h2>
@@ -55,7 +56,7 @@ const Advocacies = () => (
         </div>
       </div>
     </div>
-  </>
+  </PageTemplate>
 );
 
 export default Advocacies;

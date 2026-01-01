@@ -8,6 +8,7 @@ import Advocacies from "./pages/Advocacies";
 import Announcements, { type AnnouncementProps } from "./pages/Announcements";
 import Portal from "./pages/Portal";
 import Footer from "./components/layout/Footer";
+import Login from "./pages/login";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -47,18 +48,15 @@ const App = () => {
       </button>
 
       <div className="flex-1 ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          {activeSection === "home" && <Home />}
-          {activeSection === "about" && <About />}
-          {activeSection === "gallery" && <Gallery />}
-          {activeSection === "advocacies" && <Advocacies />}
-          {activeSection === "announcements" && (
-            <Announcements announcements={announcements} />
-          )}
-          {activeSection === "portal" && (
-            <Portal announcements={announcements} />
-          )}
-        </div>
+        {activeSection === "login" && <Login />}
+        {activeSection === "home" && <Home />}
+        {activeSection === "about" && <About />}
+        {activeSection === "gallery" && <Gallery />}
+        {activeSection === "advocacies" && <Advocacies />}
+        {activeSection === "announcements" && (
+          <Announcements announcements={announcements} />
+        )}
+        {activeSection === "portal" && <Portal announcements={announcements} />}
       </div>
 
       <Footer />

@@ -1,4 +1,5 @@
 import dp from "../../assets/dp.png";
+import PageTemplate from "../../components/layout/template/PageTemplate";
 
 const data = [
   {
@@ -20,7 +21,7 @@ const data = [
 
 const Home = () => {
   return (
-    <>
+    <PageTemplate>
       {/* decorative blobs */}
       <svg
         className="absolute -left-32 -top-40 opacity-30"
@@ -90,7 +91,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </>
+    </PageTemplate>
   );
 };
 

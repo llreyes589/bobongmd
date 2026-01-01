@@ -33,6 +33,7 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
               "advocacies",
               "announcements",
               "portal",
+              // "login",
             ].map((section) => (
               <button
                 key={section}
