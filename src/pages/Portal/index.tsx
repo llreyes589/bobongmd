@@ -83,12 +83,12 @@ const Portal = ({ announcements }: { announcements: AnnouncementProps[] }) => {
             onClick={() => setPortalView(tab.id)}
             className={`flex items-center justify-center space-x-2 px-6 py-4 rounded-xl font-semibold transition-all duration-300 ${
               portalView === tab.id
-                ? "bg-linear-to-r from-blue-600 to-teal-600 text-white shadow-2xl scale-105"
+                ? "text-primary-light bg-secondary-main shadow-2xl scale-105"
                 : "bg-white text-gray-700 hover:bg-gray-50 shadow"
             }`}
           >
             <tab.icon className="h-5 w-5" />
-            <span>{tab.label}</span>
+            <span> {tab.label}</span>
           </button>
         ))}
       </div>
@@ -139,10 +139,10 @@ const Portal = ({ announcements }: { announcements: AnnouncementProps[] }) => {
             {resources.map((resource) => (
               <div
                 key={resource.id}
-                className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                className="flex items-center md:justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors xs:flex-col md:flex-row"
               >
                 <div className="flex items-center space-x-4">
-                  <FileText className="h-8 w-8 text-red-500" />
+                  <FileText className="h-8 w-8 text-primary-dark" />
                   <div>
                     <p className="font-semibold text-gray-900">
                       {resource.name}
@@ -152,7 +152,7 @@ const Portal = ({ announcements }: { announcements: AnnouncementProps[] }) => {
                     </p>
                   </div>
                 </div>
-                <button className="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors flex items-center space-x-2">
+                <button className="bg-primary-light text-secondary-main px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors flex items-center space-x-2">
                   <Download className="h-4 w-4" />
                   <span>Download</span>
                 </button>
@@ -167,45 +167,27 @@ const Portal = ({ announcements }: { announcements: AnnouncementProps[] }) => {
           <h3 className="text-2xl font-bold text-gray-900 mb-6">
             Submit Your Work
           </h3>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-1 gap-6">
             <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-teal-500 transition-colors bg-white/70 backdrop-blur-sm">
               <Upload className="h-12 w-12 text-gray-400 mx-auto mb-4" />
               <h4 className="text-lg font-semibold text-gray-900 mb-2">
                 Upload Document
               </h4>
-              <p className="text-gray-600 mb-4">PDF, DOC, DOCX (Max 10MB)</p>
+              <p className="text-gray-600 mb-4">
+                JPG, PNG, PDF, DOC, DOCX (Max 10MB)
+              </p>
               <input
                 type="file"
-                accept=".pdf,.doc,.docx"
+                accept=".pdf,.doc,.docx,.jpg,,png"
                 onChange={(e) => handleFileUpload(e, "Document")}
                 className="hidden"
                 id="doc-upload"
               />
               <label
                 htmlFor="doc-upload"
-                className="bg-linear-to-r from-blue-600 to-teal-600 text-white px-6 py-2 rounded-full hover:opacity-95 transition-opacity cursor-pointer inline-block"
+                className="bg-primary-light text-secondary-main px-6 py-2 rounded-full hover:opacity-95 transition-opacity cursor-pointer inline-block"
               >
                 Choose File
-              </label>
-            </div>
-            <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-blue-500 transition-colors bg-white/70 backdrop-blur-sm">
-              <ImageIcon className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                Upload Blood Smear
-              </h4>
-              <p className="text-gray-600 mb-4">JPG, PNG (Max 5MB)</p>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={(e) => handleFileUpload(e, "Blood Smear")}
-                className="hidden"
-                id="image-upload"
-              />
-              <label
-                htmlFor="image-upload"
-                className="bg-linear-to-r from-blue-500 to-blue-700 text-white px-6 py-2 rounded-full hover:opacity-95 transition-opacity cursor-pointer inline-block"
-              >
-                Choose Image
               </label>
             </div>
           </div>
