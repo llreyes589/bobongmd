@@ -10,7 +10,7 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-linear-to-r bg-primary-main text-white shadow-lg sticky top-0 z-50 backdrop-blur-sm">
+    <nav className="bg-linear-to-r bg-primary-main text-white shadow-lg sticky top-0 z-50 backdrop-blur-sm w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-3">

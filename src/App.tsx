@@ -31,7 +31,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="h-screen bg-white flex flex-col">
       <Header
         activeSection={activeSection}
         setActiveSection={setActiveSection}
@@ -46,14 +46,17 @@ const App = () => {
         <Upload className="h-6 w-6" />
       </button>
 
-      {activeSection === "home" && <Home />}
-      {activeSection === "about" && <About />}
-      {activeSection === "gallery" && <Gallery />}
-      {activeSection === "advocacies" && <Advocacies />}
-      {activeSection === "announcements" && (
-        <Announcements announcements={announcements} />
-      )}
-      {activeSection === "portal" && <Portal announcements={announcements} />}
+      <div className="flex-1">
+        {activeSection === "home" && <Home />}
+        {activeSection === "about" && <About />}
+        {activeSection === "gallery" && <Gallery />}
+        {activeSection === "advocacies" && <Advocacies />}
+        {activeSection === "announcements" && (
+          <Announcements announcements={announcements} />
+        )}
+        {activeSection === "portal" && <Portal announcements={announcements} />}
+      </div>
+
       <Footer />
     </div>
   );
