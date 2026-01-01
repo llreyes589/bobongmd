@@ -174,7 +174,7 @@ const Portal = ({ announcements }: { announcements: AnnouncementProps[] }) => {
                 Upload Document
               </h4>
               <p className="text-gray-600 mb-4">
-                JPG, PNG, PDF, DOC, DOCX (Max 10MB)
+                JPG, PNG, PDF, DOC, DOCX (Max 2MB)
               </p>
               <input
                 type="file"

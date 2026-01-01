@@ -62,7 +62,7 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden bg-teal-800 px-4 py-3 space-y-2">
+        <div className="md:hidden bg-primary-main px-4 py-3 space-y-2 ">
           {[
             "home",
             "about",
@@ -79,8 +79,8 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
               }}
               className={`block w-full text-left px-3 py-2 rounded-md ${
                 activeSection === section
-                  ? "bg-white text-teal-700"
-                  : "hover:bg-teal-700"
+                  ? "bg-white text-primary-dark"
+                  : "hover:bg-primary-main"
               }`}
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}

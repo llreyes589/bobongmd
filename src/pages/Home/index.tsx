@@ -1,5 +1,23 @@
 import dp from "../../assets/dp.png";
 
+const data = [
+  {
+    id: 1,
+    title: "Years in Practice",
+    figure: "15+",
+  },
+  {
+    id: 2,
+    title: "Publications",
+    figure: "32",
+  },
+  {
+    id: 3,
+    title: "Students Mentored",
+    figure: "120+",
+  },
+];
+
 const Home = () => {
   return (
     <>
@@ -30,31 +48,26 @@ const Home = () => {
               Pathology • Teaching • Mentorship
             </div>
           </h1>
-          <p className="text-lg text-gray-600 max-w-xl">
+          <p className="text-lg text-primary-dark max-w-xl">
             Dr. Bobong is a pathologist and professor based in the Philippines —
             combining clinical expertise, research, and entrepreneurship to
             educate future healthcare leaders.
           </p>
 
           <div className="flex md:gap-4 my-6">
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 shadow-md w-40">
-              <div className="xs:text-xs md:text-sm text-gray-500">
-                Years in Practice
+            {data.map((d) => (
+              <div
+                key={d.id}
+                className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 shadow-md w-40 flex flex-col justify-evenly"
+              >
+                <div className="xs:text-xs md:text-sm text-primary-light flex-1">
+                  {d.title}
+                </div>
+                <div className="text-2xl font-bold text-secondary-dark">
+                  {d.figure}
+                </div>
               </div>
-              <div className="text-2xl font-bold text-blue-700">15+</div>
-            </div>
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 shadow-md w-40">
-              <div className="xs:text-xs md:text-sm text-gray-500">
-                Publications
-              </div>
-              <div className="text-2xl font-bold text-teal-700">32</div>
-            </div>
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 shadow-md w-40">
-              <div className="xs:text-xs md:text-sm text-gray-500">
-                Students Mentored
-              </div>
-              <div className="text-2xl font-bold text-green-700">120+</div>
-            </div>
+            ))}
           </div>
         </div>
         <div className="">
