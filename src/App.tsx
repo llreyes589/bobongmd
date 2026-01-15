@@ -9,6 +9,7 @@ import Announcements, { type AnnouncementProps } from "./pages/Announcements";
 import Portal from "./pages/Portal";
 import Footer from "./components/layout/Footer";
 import Login from "./pages/login";
+import { BrowserRouter, Routes, Route } from "react-router";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -33,11 +34,6 @@ const App = () => {
 
   return (
     <div className="h-screen bg-white flex flex-col">
-      <Header
-        activeSection={activeSection}
-        setActiveSection={setActiveSection}
-      />
-
       {/* floating portal quick action */}
       <button
         onClick={() => setActiveSection("portal")}
@@ -48,15 +44,23 @@ const App = () => {
       </button>
 
       <div className="flex-1 ">
-        {activeSection === "login" && <Login />}
-        {activeSection === "home" && <Home />}
-        {activeSection === "about" && <About />}
-        {activeSection === "gallery" && <Gallery />}
-        {activeSection === "advocacies" && <Advocacies />}
-        {activeSection === "announcements" && (
-          <Announcements announcements={announcements} />
-        )}
-        {activeSection === "portal" && <Portal announcements={announcements} />}
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/advocacies" element={<Advocacies />} />
+            <Route
+              path="/announcements"
+              element={<Announcements announcements={announcements} />}
+            />
+            <Route
+              path="/portal"
+              element={<Portal announcements={announcements} />}
+            />
+          </Routes>
+        </BrowserRouter>
       </div>
 
       <Footer />

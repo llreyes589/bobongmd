@@ -1,12 +1,18 @@
 import { Menu, Microscope, X } from "lucide-react";
 import { useState } from "react";
+import { NavLink } from "react-router";
 
-type HeaderProps = {
-  activeSection: string;
-  setActiveSection: (section: string) => void;
-};
+const navMenu = [
+  { title: "Home", link: "/" },
+  { title: "About", link: "/about" },
+  { title: "Gallery", link: "/gallery" },
+  { title: "Advocacies", link: "/advocacies" },
+  { title: "Announcements", link: "/announcements" },
+  { title: "Portal", link: "/portal" },
+];
 
-const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
+const Header = () => {
+  const [activeSection, setActiveSection] = useState("/");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -26,26 +32,19 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
           </div>
 
           <div className="hidden md:flex space-x-6 items-center">
-            {[
-              "home",
-              "about",
-              "gallery",
-              "advocacies",
-              "announcements",
-              "portal",
-              // "login",
-            ].map((section) => (
-              <button
-                key={section}
-                onClick={() => setActiveSection(section)}
+            {navMenu.map(({ title, link }) => (
+              <NavLink
+                to={link}
+                key={title}
+                onClick={() => setActiveSection(title)}
                 className={`md:px-1 lg:px-3 py-2 rounded-md md:text-caption lg:text-sm font-medium transition-all duration-300 ${
-                  activeSection === section
+                  activeSection === title
                     ? "bg-white text-primary-dark shadow-md"
                     : "hover:bg-primary-light"
                 }`}
               >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </button>
+                {title}
+              </NavLink>
             ))}
           </div>
 
@@ -64,28 +63,22 @@ const Header = ({ activeSection, setActiveSection }: HeaderProps) => {
 
       {mobileMenuOpen && (
         <div className="md:hidden bg-primary-main px-4 py-3 space-y-2 ">
-          {[
-            "home",
-            "about",
-            "gallery",
-            "advocacies",
-            "announcements",
-            "portal",
-          ].map((section) => (
-            <button
-              key={section}
+          {navMenu.map(({ title, link }) => (
+            <NavLink
+              to={link}
+              key={title}
               onClick={() => {
-                setActiveSection(section);
+                setActiveSection(title);
                 setMobileMenuOpen(false);
               }}
               className={`block w-full text-left px-3 py-2 rounded-md ${
-                activeSection === section
+                activeSection === title
                   ? "bg-white text-primary-dark"
                   : "hover:bg-primary-main"
               }`}
             >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
-            </button>
+              {title}
+            </NavLink>
           ))}
         </div>
       )}
